@@ -462,7 +462,7 @@ class MemoryEntityConcatenator extends Memory {
      * overriden implementation
      */
 
-    public function processSetState(Identifier $identifier, $state){
+    public function processSetState(Identifier $identifier, $state, $message = null){
         return $identifier->getMachine() . "_" .
         $identifier->getEntityId() . "_" .
         $state;
