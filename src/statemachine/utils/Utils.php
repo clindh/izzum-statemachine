@@ -57,7 +57,7 @@ class Utils {
         // a 'shortcut' state for special cases.
         if ($command_name === '' || $command_name === null) {
             // return a command without side effects
-            return new Null();
+            return new NullCommand();
         }
 
         $output = new Composite();
