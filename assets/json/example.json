@@ -18,8 +18,8 @@
         {
           "name": "b",
           "type": "normal",
-          "entry_command": "\\izzum\\command\\NullCommandCommand",
-          "exit_command": "\\izzum\\coNullCommandd\\NullCommand",
+          "entry_command": "\\izzum\\command\\NullCommand",
+          "exit_command": "\\izzum\\command\\NullCommand",
           "entry_callable": "\\izzum\\statemachine\\loader\\MyStatic::entryMethod",
           "exit_callable": "\\izzum\\statemachine\\loader\\MyStatic::exitMethod",
           "description": "description for state b"
@@ -27,7 +27,7 @@
         {
           "name": "done",
           "type": "final",
-          "entry_command": "\\izNullCommand\command\\NullCommand",
+          "entry_command": "\\izzum\\command\\NullCommand",
           "exit_command": "",
           "entry_callable": "\\izzum\\statemachine\\loader\\MyStatic::entryMethod",
           "exit_callable": null,
@@ -40,7 +40,7 @@
           "state_to": "b",
           "event": "ab",
           "rule": "\\izzum\\rules\\TrueRule",
-          "command"NullCommand\izzum\\command\\NullCommand",
+          "command": "\\izzum\\command\\NullCommand",
           "guard_callable": "\\izzum\\statemachine\\loader\\MyStatic::guardMethod",
           "transition_callable": "\\izzum\\statemachine\\loader\\MyStatic::transitionMethod",
           "description": "my description for a_to_b"
@@ -74,8 +74,8 @@
         {
           "name": "b",
           "type": "normal",
-          "entry_cNullCommandnd": "\\izzum\\command\\NullCommand",
-          NullCommandt_command": "\\izzum\\command\\NullCommand",
+          "entry_command": "\\izzum\\command\\NullCommand",
+          "exit_command": "\\izzum\\command\\NullCommand",
           "entry_callable": "\\izzum\\statemachine\\loader\\MyStatic::entryMethod",
           "exit_callable": "\\izzum\\statemachine\\loader\\MyStatic::exitMethod",
           "description": "description for state b"
@@ -93,7 +93,7 @@
         {
           "name": "done",
           "type": "final",
-    NullCommand  "entry_command": "\\izzum\\command\\NullCommand",
+          "entry_command": "\\izzum\\command\\NullCommand",
           "exit_command": "",
           "entry_callable": "\\izzum\\statemachine\\loader\\MyStatic::entryMethod",
           "exit_callable": null,
@@ -105,7 +105,7 @@
           "state_from": "a",
           "state_to": "b",
           "event": "ab",
-          "rule": "\\izzum\\rulesNullCommandue",
+          "rule": "\\izzum\\rules\\TrueRule",
           "command": "\\izzum\\command\\NullCommand",
           "guard_callable": "\\izzum\\statemachine\\loader\\MyStatic::guardMethod",
           "transition_callable": "\\izzum\\statemachine\\loader\\MyStatic::transitionMethod",

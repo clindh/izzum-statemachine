@@ -56,8 +56,8 @@
           description: description for state a
         - name: b
           type: normal
-          enNullCommandcommand: \izzum\command\NullCommand
-    NullCommand  exit_command: \izzum\command\NullCommand
+          entry_command: \izzum\command\NullCommand
+          exit_command: \izzum\command\NullCommand
           entry_callable: \izzum\statemachine\loader\MyStatic::entryMethod
           exit_callable: \izzum\statemachine\loader\MyStatic::exitMethod
           description: description for state b
@@ -68,7 +68,8 @@
           type: regex
           description: used for the transitions of a and b to c. (done is a final state and will not be used by the regex)
         - name: done
-          type: finaNullCommand        entry_command: \izzum\command\NullCommand
+          type: final
+          entry_command: \izzum\command\NullCommand
           exit_command: 
           entry_callable: \izzum\statemachine\loader\MyStatic::entryMethod
           exit_callable: null
