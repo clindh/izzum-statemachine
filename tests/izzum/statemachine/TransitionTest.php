@@ -20,8 +20,8 @@ class TransitionTest extends \PHPUnit_Framework_TestCase {
     {
         $from = new State('a');
         $to = new State('b');
-        $rule = 'izzum\rules\True';
-        $command = 'izzum\command\Null';
+        $rule = 'izzum\rules\TrueRule';
+        $command = 'izzum\command\NullCommand';
         $object = new Context(new Identifier(Identifier::NULL_ENTITY_ID, Identifier::NULL_STATEMACHINE));
         $transition = new Transition($from, $to, null, $rule, $command);
         $this->assertEquals($from . '_to_' . $to, $transition->getName());
@@ -220,7 +220,7 @@ class TransitionTest extends \PHPUnit_Framework_TestCase {
     {
         $from = new State('a');
         $to = new State('b');
-        $rule = 'izzum\rules\False';
+        $rule = 'izzum\rules\FalseRule';
         $command = 'izzum\command\SimpleCommand'; // declared in this file
         $object = new Context(new Identifier(Identifier::NULL_ENTITY_ID, Identifier::NULL_STATEMACHINE));
         $transition = new Transition($from, $to, null, $rule, $command);
@@ -244,14 +244,14 @@ class TransitionTest extends \PHPUnit_Framework_TestCase {
         $from = new State('a');
         $to = new State('b');
         $rule = Transition::RULE_EMPTY;
-        $command = 'izzum\command\SimpleCommand,izzum\command\Null';
+        $command = 'izzum\command\SimpleCommand,izzum\command\NullCommand';
         $object = new Context(new Identifier(Identifier::NULL_ENTITY_ID, Identifier::NULL_STATEMACHINE));
         $transition = new Transition($from, $to, null, $rule, $command);
         $command = $transition->getCommand($object);
         $this->assertTrue(is_a($command, 'izzum\command\Composite'));
         $this->assertContains('izzum\command\SimpleCommand', $command->toString());
-        $this->assertContains('izzum\command\Null', $command->toString());
-        $this->assertEquals('izzum\command\Composite consisting of: [izzum\command\SimpleCommand, izzum\command\Null]', $command->toString());
+        $this->assertContains('izzum\command\NullCommand', $command->toString());
+        $this->assertEquals('izzum\command\Composite consisting of: [izzum\command\SimpleCommand, izzum\command\NullCommand]', $command->toString());
     }
 
     /**
@@ -261,14 +261,14 @@ class TransitionTest extends \PHPUnit_Framework_TestCase {
     {
         $from = new State('a');
         $to = new State('b');
-        $rule = 'izzum\rules\True,izzum\rules\False';
+        $rule = 'izzum\rules\TrueRule,izzum\rules\FalseRule';
         $command = 'izzum\command\SimpleCommand'; // declared in this file
         $object = new Context(new Identifier(Identifier::NULL_ENTITY_ID, Identifier::NULL_STATEMACHINE));
         $transition = new Transition($from, $to, null, $rule);
         $rule = $transition->getRule($object);
         $this->assertTrue(is_a($rule, 'izzum\rules\AndRule'));
         $this->assertFalse($rule->applies());
-        $this->assertEquals('((izzum\rules\True and izzum\rules\True) and izzum\rules\False)', $rule->toString());
+        $this->assertEquals('((izzum\rules\TrueRule and izzum\rules\TrueRule) and izzum\rules\FalseRule)', $rule->toString());
     }
 
     /**
@@ -307,7 +307,7 @@ class TransitionTest extends \PHPUnit_Framework_TestCase {
     {
         $from = new State('a');
         $to = new State('b');
-        $rule = 'izzum\rules\True';
+        $rule = 'izzum\rules\TrueRule';
         $command = 'izzum\command\Null';
         $object = new Context(new Identifier(Identifier::NULL_ENTITY_ID, Identifier::NULL_STATEMACHINE));
         $transition = new Transition($from, $to, null, $rule, $command);
@@ -322,7 +322,7 @@ class TransitionTest extends \PHPUnit_Framework_TestCase {
     {
         $from = new State('a');
         $to = new State('b');
-        $rule = 'izzum\rules\False';
+        $rule = 'izzum\rules\FalseRule';
         $command = 'izzum\command\Null';
         $object = new Context(new Identifier(Identifier::NULL_ENTITY_ID, Identifier::NULL_STATEMACHINE));
         $transition = new Transition($from, $to, null, $rule, $command);
@@ -485,7 +485,7 @@ class TransitionTest extends \PHPUnit_Framework_TestCase {
     {
         $from = new State('a');
         $to = new State('b');
-        $rule = 'izzum\rules\True';
+        $rule = 'izzum\rules\TrueRule';
         $command = 'izzum\command\ExceptionCommand';
         $object = new Context(new Identifier(Identifier::NULL_ENTITY_ID, Identifier::NULL_STATEMACHINE));
         $transition = new Transition($from, $to, null, $rule, $command);

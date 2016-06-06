@@ -43,7 +43,7 @@ class CommandTest extends PHPUnit_Framework_TestCase {
     public function testNullCommand()
     {
         //test creation
-        $command = new izzum\command\Null();
+        $command = new izzum\command\NullCommand();
         $command->execute();
     }
     

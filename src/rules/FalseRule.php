@@ -9,7 +9,7 @@ namespace izzum\rules;
  *
  * @author Rolf Vreijdenberger
  */
-class False extends Rule {
+class FalseRule extends Rule {
 
     protected function _applies()
     {
