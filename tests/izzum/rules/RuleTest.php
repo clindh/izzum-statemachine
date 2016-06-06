@@ -1,5 +1,7 @@
 <?php
 use izzum\rules\Rule;
+use izzum\rules\TrueRule;
+use izzum\rules\FalseRule;
 use izzum\rules\NotRule;
 use izzum\rules\AndRule;
 use izzum\rules\OrRule;
