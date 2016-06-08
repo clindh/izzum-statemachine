@@ -6,7 +6,27 @@ php:
   - 5.6
   - 7.0
   - hhvm
-  - nightly
+ 
+  
+matrix:
+  fast_finish: true
+  include:
+    - php: 5.3
+      env: PHPUNIT_BOOTSTRAP="phpunit-bootstrap-5.x.xml"
+    - php: 5.4
+      env: PHPUNIT_BOOTSTRAP="phpunit-bootstrap-5.x.xml"
+    - php: 5.5
+      env: PHPUNIT_BOOTSTRAP="phpunit-bootstrap-5.x.xml"
+    - php: 5.6
+      env: PHPUNIT_BOOTSTRAP="phpunit-bootstrap-5.x.xml"
+    - php: 7.0
+      env: PHPUNIT_BOOTSTRAP="phpunit-bootstrap-7.x.xml"
+  allow_failures:
+    - php: hhvm
+    - php: 7.0  
+  
+  
+  
 install:
   - composer --no-interaction install
 
@@ -29,7 +49,11 @@ services:
   - mongodb
   - redis-server
   
-script: phpunit --configuration tests/phpunit-travis.xml --coverage-clover=coverage.clover
+  
+  
+  
+script: phpunit --configuration tests/$PHPUNIT_BOOTSTRAP --coverage-clover=coverage.clover
+
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar
