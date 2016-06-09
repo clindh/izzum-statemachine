@@ -6,8 +6,10 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rolfvreijdenberger/izzum-statemachine/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rolfvreijdenberger/izzum-statemachine/?branch=master)
 [![License](https://poser.pugx.org/rolfvreijdenberger/izzum-statemachine/license.svg)](https://packagist.org/packages/rolfvreijdenberger/izzum-statemachine)
 
-###A superior, extensible and flexible statemachine library
+###A superior, extensible and flexible statemachine library for php version >= 5.3 including php 7
 A [finite statemachine](https://en.wikipedia.org/wiki/Finite-state_machine "finite statemachine on wikipedia") is a model for the behaviour of a system that consists of a finite number of states, transitions between those states and guard~ and transition logic for those states and transitions. 
+
+see the [change log here](https://github.com/rolfvreijdenberger/izzum-statemachine/blob/master/CHANGELOG.md).
 
 
 ###about
@@ -18,7 +20,8 @@ It will work seamlessly with existing domain models (like 'Order', 'Customer' et
 Bitcoin donations are more than welcome on *[1zzumvx7zVHv3AdWXQ1XUuNKyQonx7uHM](https://blockchain.info/address/1zzumvx7zVHv3AdWXQ1XUuNKyQonx7uHM)*.
 
 ###upgrade path to 4.y.z release for php 7 from 3.y.z
-- upgrade definitions in database/yml/xml/json configuration that use False or True Rule or Null Command: use 'FalseRule', 'TrueRule', 'NullCommand'
+- upgrade definitions in database/yml/xml/json configuration that use False Rule, True Rule or Null Command: use 'FalseRule', 'TrueRule', 'NullCommand'
+- upgrade references in code that use False Rule, True Rule or Null Command: use 'FalseRule', 'TrueRule', 'NullCommand'
  
 ### Example walkthrough
 The following code examples will guide you through using the statemachine and will familiarize you with the different ways to interact with the statemachine. 
