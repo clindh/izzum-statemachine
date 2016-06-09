@@ -32,5 +32,5 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 [Unreleased]: https://github.com/rolfvreijdenberger/izzum-statemachine/compare/4.0.0...HEAD
-[4.0.0]: https://github.com/olivierlacan/keep-a-changelog/compare/3.2.3...4.0.0
+[4.0.0]: https://github.com/rolfvreijdenberger/izzum-statemachine/compare/3.2.3...4.0.0
 [3.2.3]: https://github.com/rolfvreijdenberger/izzum-statemachine/compare/3.2.2...3.2.3
